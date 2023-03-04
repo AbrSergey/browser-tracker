@@ -1,0 +1,30 @@
+{
+  "name": "browser-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --outDir dist -p tsconfig.json; cp -R ./static ./dist/static",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbrSergey/browser-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbrSergey/browser-tracker/issues"
+  },
+  "homepage": "https://github.com/AbrSergey/browser-tracker#readme",
+  "dependencies": {
+    "@fastify/cors": "^8.2.0",
+    "fastify": "^4.13.0",
+    "mongoose": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.4",
+    "typescript": "^4.9.5"
+  }
+}
