@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --outDir dist -p tsconfig.json; cp -R ./static ./dist/static",
-    "start": "node dist/index.js"
+    "build": "tsc frontend.ts --outFile ./static/tracker.js; tsc --outDir dist -p tsconfig.json; cp -R ./static ./dist/static",
+    "start": "node dist/index.js",
+    "backend:build": "tsc --outDir dist -p tsconfig.json; cp -R ./static ./dist/static",
+    "backend:start": "node dist/index.js",
+    "frontend:build": "tsc frontend.ts --outFile ./static/tracker.js"
   },
   "repository": {
     "type": "git",

@@ -15,4 +15,4 @@ Stack - `Node.js`, `TypeScript` and `mongodb`.
    - `npm i`
 
 3. Run locally
-   - `npm run build; npm run start`
+   - `npm run backend:build; npm run backend:start`

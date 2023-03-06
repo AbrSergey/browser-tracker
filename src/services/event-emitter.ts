@@ -4,6 +4,6 @@ import { createTrack } from './db-service';
 class MyEmitter extends EventEmitter {}
 
 export const myEmitter = new MyEmitter();
-export const TRACK = 'TRACK';
+export const TRACK_EVENT = 'TRACK';
 
-myEmitter.on(TRACK, createTrack);
+myEmitter.on(TRACK_EVENT, createTrack);
