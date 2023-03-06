@@ -8,7 +8,7 @@ Stack - `Node.js`, `TypeScript` and `mongodb`.
 
 1. Set environment variable for MONGO_DB_URL
 
-   - `export MONGO_DB_URL="your_mongo_db_url"`
+   - `export MONGO_DB_URL="mongodb://host:port"`
 
 2. Install dependencies
 
