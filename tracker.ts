@@ -12,7 +12,7 @@ class Tracker implements ITracker {
   private last_send_time: number;
   private send: Function;
 
-  constructor(window: Window) {
+  constructor() {
     this.buffer = [];
     this.timer_ids = [];
     this.last_send_time = 0;
@@ -33,10 +33,12 @@ class Tracker implements ITracker {
     };
 
     window.onbeforeunload = () => {
-      console.info(
-        `send by onbeforeunload buffer.length = ${this.buffer.length}`,
-      );
-      this.send(this.buffer);
+      if (this.buffer.length) {
+        console.info(
+          `send by onbeforeunload buffer.length = ${this.buffer.length}`,
+        );
+        this.send(this.buffer);
+      }
     };
   }
 
@@ -84,4 +86,4 @@ class Tracker implements ITracker {
   }
 }
 
-const tracker = new Tracker(window);
+const tracker = new Tracker();

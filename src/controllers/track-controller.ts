@@ -1,5 +1,5 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { myEmitter, TRACK_EVENT } from '../services/event-emitter';
+import { myEmitter, TRACK_EVENTS } from '../services/event-emitter';
 import { TrackType } from '../types/track-type';
 
 export const trackSchema = {
@@ -27,7 +27,6 @@ export const trackController = (
   reply: FastifyReply,
 ) => {
   const tracks = req.body;
-  tracks.forEach((track) => myEmitter.emit(TRACK_EVENT, track));
-  console.info(tracks);
+  if (tracks.length) myEmitter.emit(TRACK_EVENTS, tracks);
   reply.code(200).send('ok');
 };
