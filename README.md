@@ -6,13 +6,13 @@ Stack - `Node.js`, `TypeScript` and `mongodb`.
 
 ## How to run
 
-1. Set environment variable for MONGO_DB_URL
-
-   - `export MONGO_DB_URL="mongodb://host:port"`
-
-2. Install dependencies
+1. Install dependencies
 
    - `npm i`
+
+2. Set environment variable for MONGO_DB_URL
+
+   - `export MONGO_DB_URL="mongodb://host:port"`
 
 3. Run locally
    - `npm run build; npm run start`
