@@ -15,11 +15,7 @@ const trackSchema = new mongoose.Schema({
 const TrackModel = mongoose.model('tracks', trackSchema);
 
 export async function createTrack(tracks: TrackType[]) {
-  try {
-    await TrackModel.insertMany(tracks)
-      .then(() => console.info(`Mongodb: inserted ${tracks.length} docs`))
-      .catch((err) => console.error(`Mongodb: error ${err}`));
-  } catch (err) {
-    console.error(err);
-  }
+  await TrackModel.insertMany(tracks)
+    .then(() => console.info(`Mongodb: inserted ${tracks.length} docs`))
+    .catch((err) => console.error(`Mongodb: error ${err}`));
 }
