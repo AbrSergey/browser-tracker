@@ -27,6 +27,20 @@ export const trackController = (
   reply: FastifyReply,
 ) => {
   const tracks = req.body;
+
+  /*
+    Requirement: The application responds to the client without waiting for the data to be inserted into the database.
+
+    Options:
+    - make an asynchronous call to a promise and not wait for a response
+        TrackModel.insertMany(tracks)
+        .then(() => console.info(`Mongodb: inserted ${tracks.length} docs`))
+        .catch((err) => console.error(`Mongodb: error ${err}`));
+
+    - use EventEmitter
+  */
+
   if (tracks.length) myEmitter.emit(TRACK_EVENTS, tracks);
+
   reply.code(200).send('ok');
 };
