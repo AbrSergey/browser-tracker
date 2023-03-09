@@ -72,7 +72,7 @@ class Tracker implements ITracker {
   track(event: string, ...tags: string[]): void {
     const url = window.location.href;
     const title = document.title;
-    const ts = new Date().getTime();
+    const ts = Math.floor(new Date().getTime() / 1000);
 
     this._buffer.push({
       event,
