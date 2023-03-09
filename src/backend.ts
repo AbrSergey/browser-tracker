@@ -5,7 +5,9 @@ import { trackerController } from './controllers/tracker-controller';
 
 const backend = fastify();
 
-backend.register(cors, {});
+backend.register(cors, {
+  maxAge: 86400,
+});
 
 backend.setErrorHandler(function (error, _request, reply) {
   reply.code(422).send(error);
